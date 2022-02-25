@@ -9,8 +9,12 @@ import {
 import { layoutStyle } from "../styles";
 import logo from "../../assets/logo.png";
 import RegisterForm from "../components/Auth/RegisterForm";
+import LoginForm from "../components/Auth/LoginForm";
 export default function Auth() {
-  const [showLogin, setShowLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+  const changeForm = () => {
+    setShowLogin(!showLogin);
+  };
 
   return (
     <View style={layoutStyle.container}>
@@ -18,7 +22,11 @@ export default function Auth() {
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
-        {showLogin ? <Text>Form Login</Text> : <RegisterForm />}
+        {showLogin ? (
+          <LoginForm changeForm={changeForm} />
+        ) : (
+          <RegisterForm changeForm={changeForm} />
+        )}
       </KeyboardAvoidingView>
     </View>
   );
