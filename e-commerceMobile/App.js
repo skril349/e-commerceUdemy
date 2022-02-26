@@ -5,6 +5,9 @@ import AuthScreen from "./src/screens/Auth";
 import AuthContext from "./src/context/AuthContext";
 import { setTokenApi, getTokenApi, removeTokenApi } from "./src/api/token";
 import jwtDecode from "jwt-decode";
+import AppNavigation from "./src/navigation/AppNavigation";
+import "react-native-gesture-handler";
+
 export default function App() {
   const [auth, setAuth] = useState(undefined);
   useEffect(() => {
@@ -50,18 +53,7 @@ export default function App() {
 
   return (
     <AuthContext.Provider value={authData}>
-      <PaperProvider>
-        {auth ? (
-          <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-          >
-            <Text>LOGIEAOS</Text>
-            <Button title="cerrar sesion " onPress={authData.logout} />
-          </View>
-        ) : (
-          <AuthScreen />
-        )}
-      </PaperProvider>
+      <PaperProvider>{auth ? <AppNavigation /> : <AuthScreen />}</PaperProvider>
     </AuthContext.Provider>
   );
 }
