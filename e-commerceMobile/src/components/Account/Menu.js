@@ -61,7 +61,7 @@ export default function Menu() {
           title="Añadir direcciones"
           description="Administra tus direcciones de envio"
           left={(props) => <List.Icon {...props} icon="map"></List.Icon>}
-          onPress={() => console.log("Cambiar direcciones")}
+          onPress={() => navigation.navigate("adresses")}
         />
       </List.Section>
       <List.Section>

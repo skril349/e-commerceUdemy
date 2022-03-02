@@ -6,6 +6,9 @@ import ChangeEmail from "../screens/Account/ChangeEmail";
 import ChangeUsername from "../screens/Account/ChangeUsername";
 import colors from "../styles/colors";
 import ChangePassword from "../screens/Account/ChangePassword";
+import Adresses from "../screens/Account/Adresses";
+import AddAddress from "../screens/Account/AddAddress";
+
 const Stack = createStackNavigator();
 export default function AccountStack() {
   return (
@@ -58,6 +61,22 @@ export default function AccountStack() {
         component={ChangePassword}
         options={{
           title: "Cambiar la contraseña",
+        }}
+      />
+
+      <Stack.Screen
+        name="adresses"
+        component={Adresses}
+        options={{
+          title: "mis direcciones",
+        }}
+      />
+
+      <Stack.Screen
+        name="add-address"
+        component={AddAddress}
+        options={{
+          title: "nueva dirección",
         }}
       />
     </Stack.Navigator>

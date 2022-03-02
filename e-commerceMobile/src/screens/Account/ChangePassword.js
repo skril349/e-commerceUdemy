@@ -59,7 +59,6 @@ export default function ChangePassword() {
         error={formik.errors.repeatPassword}
         secureTextEntry
       />
-
       <Button
         mode="contained"
         style={formStyles.btnSucces}

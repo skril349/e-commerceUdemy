@@ -1,6 +1,7 @@
 const colors = {
   primary: "#0098d3",
   dark: "#000",
+  danger: "red",
   //Fonts
   fontLight: "#fff",
   //Background
