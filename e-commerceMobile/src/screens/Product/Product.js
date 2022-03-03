@@ -6,12 +6,18 @@ import Search from "../../components/Search";
 import colors from "../../styles/colors";
 import ScreenLoading from "../../components/ScreenLoading";
 import CarouselImage from "../../components/Product/CarouselImage";
+import Price from "../../components/Product/Price";
+import Quantity from "../../components/Product/Quantity";
+import Buy from "./Buy";
+import Favorite from "../../components/Product/Favorite";
 
 export default function Product(props) {
   const { route } = props;
   const { params } = route;
+  console.log(props);
   const [product, setProduct] = useState(null);
   const [image, setImage] = useState([]);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     (async () => {
@@ -34,13 +40,18 @@ export default function Product(props) {
       {!product ? (
         <ScreenLoading text="cargando producto" size="large" />
       ) : (
-        <ScrollView style={styles.container}>
-          <Text style={styles.title}>{product.title}</Text>
-          <CarouselImage images={image} />
-          <View style={styles.containerView}>
-            <Text>BTN</Text>
-          </View>
-        </ScrollView>
+        <>
+          <ScrollView style={styles.container}>
+            <Text style={styles.title}>{product.title}</Text>
+            <CarouselImage images={image} />
+            <View style={styles.containerView}>
+              <Price price={product.price} discount={product.discount} />
+              <Quantity quantity={quantity} setQuantity={setQuantity} />
+              <Buy product={product} quantity={quantity} />
+              <Favorite product={product} />
+            </View>
+          </ScrollView>
+        </>
       )}
     </>
   );
@@ -57,5 +68,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 10,
     padding: 10,
+  },
+  containerView: {
+    padding: 3,
+    marginBottom: 150,
   },
 });

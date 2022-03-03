@@ -4,6 +4,7 @@ import StatusBarCustom from "../../components/StatusBarCustom";
 import Search from "../../components/Search";
 import colors from "../../styles/colors";
 import NewProducts from "../../components/Home/NewProducts";
+import Banner from "../../components/Home/Banner";
 
 export default function HomeScreen() {
   return (
@@ -14,6 +15,7 @@ export default function HomeScreen() {
       />
       <Search />
       <ScrollView>
+        <Banner />
         <NewProducts />
       </ScrollView>
     </>
