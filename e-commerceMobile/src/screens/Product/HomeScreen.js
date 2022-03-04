@@ -14,7 +14,7 @@ export default function HomeScreen() {
         barStyle="light-content"
       />
       <Search />
-      <ScrollView>
+      <ScrollView style={styles.ScrollView}>
         <Banner />
         <NewProducts />
       </ScrollView>

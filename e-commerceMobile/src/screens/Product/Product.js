@@ -14,7 +14,6 @@ import Favorite from "../../components/Product/Favorite";
 export default function Product(props) {
   const { route } = props;
   const { params } = route;
-  console.log(props);
   const [product, setProduct] = useState(null);
   const [image, setImage] = useState([]);
   const [quantity, setQuantity] = useState(1);

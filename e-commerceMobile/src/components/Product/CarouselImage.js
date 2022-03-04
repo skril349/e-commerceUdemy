@@ -8,7 +8,7 @@ const width = Dimensions.get("window").width;
 const height = 200;
 export default function CarouselImage(props) {
   const { images } = props;
-  console.log(images);
+  //console.log(images);
   const [imageActive, setImageActive] = useState(0);
   const renderItem = ({ item }) => {
     return (

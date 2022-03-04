@@ -3,7 +3,6 @@ import React from "react";
 
 export default function Price(props) {
   const { price, discount } = props;
-  console.log(props);
   const calcPrice = (price, discount) => {
     if (!discount) {
       return price;

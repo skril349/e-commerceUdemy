@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
   },
   product: {
     padding: 10,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#d9d6d0",
+    borderRadius: 20,
   },
   image: {
     height: 150,
