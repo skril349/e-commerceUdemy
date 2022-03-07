@@ -19,6 +19,7 @@ export default function Product(props) {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
+    setProduct(null);
     (async () => {
       const response = await getProductApi(params.idProduct);
       await setProduct(response);
