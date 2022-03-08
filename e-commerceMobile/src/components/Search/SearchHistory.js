@@ -45,7 +45,6 @@ export default function SearchHistory(props) {
             <View style={styles.historyItem}>
               <Text style={styles.text}>{item.search}</Text>
               <AwesomeIcon name="arrow-right" size={16} />
-              <Button onPress={() => console.log("HEY")}>Hey</Button>
             </View>
           </TouchableWithoutFeedback>
         ))}

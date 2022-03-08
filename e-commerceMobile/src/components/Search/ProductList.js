@@ -56,7 +56,6 @@ export default function ProductList(props) {
                 )}
               </View>
               <Button style={styles.btn} color={colors.primary}>
-                {" "}
                 Ver Producto
               </Button>
             </View>
