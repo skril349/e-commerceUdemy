@@ -8,6 +8,7 @@ import colors from "../styles/colors";
 import ChangePassword from "../screens/Account/ChangePassword";
 import Adresses from "../screens/Account/Adresses";
 import AddAddress from "../screens/Account/AddAddress";
+import Orders from "../screens/Account/Orders";
 
 const Stack = createStackNavigator();
 export default function AccountStack() {
@@ -77,6 +78,13 @@ export default function AccountStack() {
         component={AddAddress}
         options={{
           title: "nueva dirección",
+        }}
+      />
+      <Stack.Screen
+        name="orders"
+        component={Orders}
+        options={{
+          title: "Mis pedidos",
         }}
       />
     </Stack.Navigator>

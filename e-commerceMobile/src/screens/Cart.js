@@ -14,6 +14,7 @@ import { getAddressesApi } from "../api/address";
 import useAuth from "../hooks/useAuth";
 import AddressList from "../components/Cart/AddressList";
 import Payment from "../components/Cart/Payment";
+import Search from "../components/Search";
 
 export default function Cart() {
   const { auth } = useAuth();
@@ -54,8 +55,11 @@ export default function Cart() {
         backgroundColor={Colors.bgDark}
         barStyle="light-content"
       />
-      {!cart && size(cart) === 0 ? (
-        <NotProducts />
+      {!cart || size(cart) === 0 ? (
+        <>
+          <Search />
+          <NotProducts />
+        </>
       ) : (
         <KeyboardAwareScrollView extraScrollHeight={25}>
           <ScrollView style={styles.cartContainer}>

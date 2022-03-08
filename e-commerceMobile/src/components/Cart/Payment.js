@@ -38,7 +38,7 @@ export default function Payment(props) {
         );
         if (size(response) > 0) {
           await deleteCartApi();
-          navigation.navigate("acount");
+          navigation.navigate("acount", { screen: "orders" });
         } else {
           Toast.show("error al realizar el pedido", {
             position: Toast.positions.CENTER,

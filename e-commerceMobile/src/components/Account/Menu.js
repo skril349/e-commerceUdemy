@@ -72,7 +72,7 @@ export default function Menu() {
           left={(props) => (
             <List.Icon {...props} icon="clipboard-list"></List.Icon>
           )}
-          onPress={() => console.log("Ir a mis pedidos")}
+          onPress={() => navigation.navigate("orders")}
         />
 
         <List.Item
